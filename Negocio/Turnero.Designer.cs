@@ -69,9 +69,6 @@ namespace ProyectoGrupo9.Negocio
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.cboCosto = new System.Windows.Forms.ComboBox();
             this.dgvTurno = new System.Windows.Forms.DataGridView();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.colum_np = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colum_ap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colum_obra = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +79,9 @@ namespace ProyectoGrupo9.Negocio
             this.colum_equipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colum_Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clum_descrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaciente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurno)).BeginInit();
@@ -195,9 +195,11 @@ namespace ProyectoGrupo9.Negocio
             // 
             // btnAgenda
             // 
-            this.btnAgenda.Location = new System.Drawing.Point(141, 193);
+            this.btnAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgenda.Image = ((System.Drawing.Image)(resources.GetObject("btnAgenda.Image")));
+            this.btnAgenda.Location = new System.Drawing.Point(141, 187);
             this.btnAgenda.Name = "btnAgenda";
-            this.btnAgenda.Size = new System.Drawing.Size(91, 20);
+            this.btnAgenda.Size = new System.Drawing.Size(91, 30);
             this.btnAgenda.TabIndex = 7;
             this.btnAgenda.Text = "Agenda";
             this.btnAgenda.UseVisualStyleBackColor = true;
@@ -205,9 +207,11 @@ namespace ProyectoGrupo9.Negocio
             // 
             // btnRefrescar
             // 
-            this.btnRefrescar.Location = new System.Drawing.Point(42, 194);
+            this.btnRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefrescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefrescar.Image")));
+            this.btnRefrescar.Location = new System.Drawing.Point(42, 187);
             this.btnRefrescar.Name = "btnRefrescar";
-            this.btnRefrescar.Size = new System.Drawing.Size(75, 23);
+            this.btnRefrescar.Size = new System.Drawing.Size(75, 30);
             this.btnRefrescar.TabIndex = 6;
             this.btnRefrescar.Text = "Refrescar";
             this.btnRefrescar.UseVisualStyleBackColor = true;
@@ -226,7 +230,9 @@ namespace ProyectoGrupo9.Negocio
             // 
             // btnBucar
             // 
-            this.btnBucar.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnBucar.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnBucar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBucar.Image = ((System.Drawing.Image)(resources.GetObject("btnBucar.Image")));
             this.btnBucar.Location = new System.Drawing.Point(414, 11);
             this.btnBucar.Name = "btnBucar";
             this.btnBucar.Size = new System.Drawing.Size(75, 23);
@@ -451,32 +457,6 @@ namespace ProyectoGrupo9.Negocio
             this.dgvTurno.Size = new System.Drawing.Size(896, 206);
             this.dgvTurno.TabIndex = 24;
             // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(423, 436);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
-            this.lblDescripcion.TabIndex = 25;
-            this.lblDescripcion.Text = "Descripcion";
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(486, 429);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(222, 20);
-            this.txtDescripcion.TabIndex = 26;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(636, 455);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 27;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
             // colum_np
             // 
             this.colum_np.HeaderText = "Nombre_Paciente";
@@ -539,6 +519,34 @@ namespace ProyectoGrupo9.Negocio
             this.clum_descrip.HeaderText = "Descripcion";
             this.clum_descrip.Name = "clum_descrip";
             this.clum_descrip.ReadOnly = true;
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(423, 436);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcion.TabIndex = 25;
+            this.lblDescripcion.Text = "Descripcion";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(486, 429);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(222, 20);
+            this.txtDescripcion.TabIndex = 26;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.Location = new System.Drawing.Point(636, 455);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 27;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // Turnero
             // 
