@@ -86,6 +86,12 @@
       <DependentUpon>DatosEstadistica.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datos\BDHelper.cs" />
+    <Compile Include="Negocio\ALEIO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Negocio\ALEIO.Designer.cs">
+      <DependentUpon>ALEIO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Negocio\frmAgenda.cs">
       <SubType>Form</SubType>
     </Compile>
