@@ -575,11 +575,9 @@ namespace ProyectoGrupo9.ConjuntoDeDatos {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class TablaEstadistica2DataTable : global::System.Data.TypedTableBase<TablaEstadistica2Row> {
             
-            private global::System.Data.DataColumn columnNombreMedico;
+            private global::System.Data.DataColumn columnApellido;
             
-            private global::System.Data.DataColumn columnApellidoMedico;
-            
-            private global::System.Data.DataColumn columnCantidadPacientes;
+            private global::System.Data.DataColumn columnCantidadTurnos;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -616,25 +614,17 @@ namespace ProyectoGrupo9.ConjuntoDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NombreMedicoColumn {
+            public global::System.Data.DataColumn ApellidoColumn {
                 get {
-                    return this.columnNombreMedico;
+                    return this.columnApellido;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ApellidoMedicoColumn {
+            public global::System.Data.DataColumn CantidadTurnosColumn {
                 get {
-                    return this.columnApellidoMedico;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CantidadPacientesColumn {
-                get {
-                    return this.columnCantidadPacientes;
+                    return this.columnCantidadTurnos;
                 }
             }
             
@@ -675,12 +665,11 @@ namespace ProyectoGrupo9.ConjuntoDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TablaEstadistica2Row AddTablaEstadistica2Row(string NombreMedico, string ApellidoMedico, string CantidadPacientes) {
+            public TablaEstadistica2Row AddTablaEstadistica2Row(string Apellido, string CantidadTurnos) {
                 TablaEstadistica2Row rowTablaEstadistica2Row = ((TablaEstadistica2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        NombreMedico,
-                        ApellidoMedico,
-                        CantidadPacientes};
+                        Apellido,
+                        CantidadTurnos};
                 rowTablaEstadistica2Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTablaEstadistica2Row);
                 return rowTablaEstadistica2Row;
@@ -703,20 +692,17 @@ namespace ProyectoGrupo9.ConjuntoDeDatos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnNombreMedico = base.Columns["NombreMedico"];
-                this.columnApellidoMedico = base.Columns["ApellidoMedico"];
-                this.columnCantidadPacientes = base.Columns["CantidadPacientes"];
+                this.columnApellido = base.Columns["Apellido"];
+                this.columnCantidadTurnos = base.Columns["CantidadTurnos"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnNombreMedico = new global::System.Data.DataColumn("NombreMedico", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombreMedico);
-                this.columnApellidoMedico = new global::System.Data.DataColumn("ApellidoMedico", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnApellidoMedico);
-                this.columnCantidadPacientes = new global::System.Data.DataColumn("CantidadPacientes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantidadPacientes);
+                this.columnApellido = new global::System.Data.DataColumn("Apellido", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApellido);
+                this.columnCantidadTurnos = new global::System.Data.DataColumn("CantidadTurnos", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidadTurnos);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -931,88 +917,59 @@ namespace ProyectoGrupo9.ConjuntoDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NombreMedico {
+            public string Apellido {
                 get {
                     try {
-                        return ((string)(this[this.tableTablaEstadistica2.NombreMedicoColumn]));
+                        return ((string)(this[this.tableTablaEstadistica2.ApellidoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreMedico\' de la tabla \'TablaEstadistica2\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Apellido\' de la tabla \'TablaEstadistica2\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTablaEstadistica2.NombreMedicoColumn] = value;
+                    this[this.tableTablaEstadistica2.ApellidoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ApellidoMedico {
+            public string CantidadTurnos {
                 get {
                     try {
-                        return ((string)(this[this.tableTablaEstadistica2.ApellidoMedicoColumn]));
+                        return ((string)(this[this.tableTablaEstadistica2.CantidadTurnosColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ApellidoMedico\' de la tabla \'TablaEstadistica2\' es DBNull" +
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CantidadTurnos\' de la tabla \'TablaEstadistica2\' es DBNull" +
                                 ".", e);
                     }
                 }
                 set {
-                    this[this.tableTablaEstadistica2.ApellidoMedicoColumn] = value;
+                    this[this.tableTablaEstadistica2.CantidadTurnosColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CantidadPacientes {
-                get {
-                    try {
-                        return ((string)(this[this.tableTablaEstadistica2.CantidadPacientesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CantidadPacientes\' de la tabla \'TablaEstadistica2\' es DBN" +
-                                "ull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTablaEstadistica2.CantidadPacientesColumn] = value;
-                }
+            public bool IsApellidoNull() {
+                return this.IsNull(this.tableTablaEstadistica2.ApellidoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNombreMedicoNull() {
-                return this.IsNull(this.tableTablaEstadistica2.NombreMedicoColumn);
+            public void SetApellidoNull() {
+                this[this.tableTablaEstadistica2.ApellidoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNombreMedicoNull() {
-                this[this.tableTablaEstadistica2.NombreMedicoColumn] = global::System.Convert.DBNull;
+            public bool IsCantidadTurnosNull() {
+                return this.IsNull(this.tableTablaEstadistica2.CantidadTurnosColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsApellidoMedicoNull() {
-                return this.IsNull(this.tableTablaEstadistica2.ApellidoMedicoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetApellidoMedicoNull() {
-                this[this.tableTablaEstadistica2.ApellidoMedicoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCantidadPacientesNull() {
-                return this.IsNull(this.tableTablaEstadistica2.CantidadPacientesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCantidadPacientesNull() {
-                this[this.tableTablaEstadistica2.CantidadPacientesColumn] = global::System.Convert.DBNull;
+            public void SetCantidadTurnosNull() {
+                this[this.tableTablaEstadistica2.CantidadTurnosColumn] = global::System.Convert.DBNull;
             }
         }
         

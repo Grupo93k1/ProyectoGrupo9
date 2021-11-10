@@ -66,5 +66,12 @@ namespace ProyectoGrupo9.Clases
             //BDHelper oDatos = new BDHelper();
             return BDHelper.GetDBHelper().ConsultaSQL(consulta);
         }
+        public DataTable RecuperarEstadistica()
+        {
+            string consulta = "select  m.apellido, count(t.medico) as 'CantidadTurnos' from Medico m join Turnos t on (m.apellido = t.medico) group by m.apellido";
+
+            //BDHelper oDatos = new BDHelper();
+            return BDHelper.GetDBHelper().ConsultaSQL(consulta);
+        }
     }  
 }

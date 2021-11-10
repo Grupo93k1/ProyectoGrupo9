@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ProyectoGrupo9</RootNamespace>
     <AssemblyName>ProyectoGrupo9</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -86,6 +87,12 @@
       <DependentUpon>DatosEstadistica.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datos\BDHelper.cs" />
+    <Compile Include="Negocio\EstadisticaMedicoPorTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Negocio\EstadisticaMedicoPorTurno.Designer.cs">
+      <DependentUpon>EstadisticaMedicoPorTurno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Negocio\frmAgenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +212,9 @@
     <EmbeddedResource Include="EstadisticaObraSocial.rdlc" />
     <EmbeddedResource Include="ListadoPaciente.rdlc" />
     <EmbeddedResource Include="ListadoTurnos.rdlc" />
+    <EmbeddedResource Include="Negocio\EstadisticaMedicoPorTurno.resx">
+      <DependentUpon>EstadisticaMedicoPorTurno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Negocio\frmAgenda.resx">
       <DependentUpon>frmAgenda.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +291,7 @@
     <None Include="ConjuntoDeDatos\DatosEstadistica.xss">
       <DependentUpon>DatosEstadistica.xsd</DependentUpon>
     </None>
+    <None Include="EstidistaTurnosPorMedico.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
