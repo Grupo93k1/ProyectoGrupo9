@@ -87,6 +87,7 @@
       <DependentUpon>DatosEstadistica.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datos\BDHelper.cs" />
+    <Compile Include="Datos\Datos.cs" />
     <Compile Include="Negocio\EstadisticaMedicoPorTurno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,8 +211,6 @@
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="EstadisticaObraSocial.rdlc" />
-    <EmbeddedResource Include="ListadoPaciente.rdlc" />
-    <EmbeddedResource Include="ListadoTurnos.rdlc" />
     <EmbeddedResource Include="Negocio\EstadisticaMedicoPorTurno.resx">
       <DependentUpon>EstadisticaMedicoPorTurno.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +279,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ReporteMedicos.rdlc" />
+    <EmbeddedResource Include="ReportePaciente.rdlc" />
+    <EmbeddedResource Include="ReporteTurnos.rdlc" />
     <None Include="ConjuntoDeDatos\DatosEstadistica.xsc">
       <DependentUpon>DatosEstadistica.xsd</DependentUpon>
     </None>

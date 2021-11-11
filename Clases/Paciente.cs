@@ -44,6 +44,30 @@ namespace ProyectoGrupo9.Clases
             //BDHelper oDatos = new BDHelper();
             return BDHelper.GetDBHelper().ConsultaSQL(consulta);
         }
+        public DataTable RecuperarFiltrados2(string nombre, string apellido, string DNI, string ciudad, string obraSocial)
+        {
+            string consulta = "SELECT * From Pacientes p " +
+                "where p.borrado = 0 ";
+
+
+            if (nombre != string.Empty)
+                consulta += " AND (p.nombre ='" + nombre + "'";
+            if (apellido != "")
+                consulta += " or p.apellido= '" + apellido + "'";
+            if (DNI != "")
+                consulta += " or p.DNI=" + DNI;
+            if (ciudad != string.Empty)
+                consulta += " or p.ciudad ='" + ciudad + "'";
+            if (obraSocial != "")
+                consulta += " or p.obra_social= '" + obraSocial + "')";
+
+
+            //return BDHelper2.GetDBHelper().ConsultaSQL(consulta);
+            //BDHelper oDatos = new BDHelper();
+
+            //return BDHelper.obtenerInstancia().consultar(consulta);
+            return Datos.Datos.obtenerInstancia().consultar(consulta);
+        }
 
     }
 }

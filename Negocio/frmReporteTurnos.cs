@@ -24,7 +24,8 @@ namespace ProyectoGrupo9.Negocio
         private void frmReporteTurnos_Load(object sender, EventArgs e)
         {
             CargarCombo(comboBox1, oMedico.RecuperarTodos());
-            //this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
+            
             //this.reportViewer1.RefreshReport();
         }
 
@@ -38,6 +39,7 @@ namespace ProyectoGrupo9.Negocio
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(ds);
             reportViewer1.LocalReport.Refresh();
+
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
@@ -60,6 +62,11 @@ namespace ProyectoGrupo9.Negocio
             combo.ValueMember = campoValor;
             combo.SelectedIndex = -1;
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

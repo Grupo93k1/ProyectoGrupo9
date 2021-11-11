@@ -29,24 +29,45 @@ namespace ProyectoGrupo9.Negocio
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.medicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.proyecto_PAVDataSet = new ProyectoGrupo9.Proyecto_PAVDataSet();
             this.reportViewer5 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnGenerar = new System.Windows.Forms.Button();
-            this.lblMatricula = new System.Windows.Forms.Label();
-            this.lblApellido = new System.Windows.Forms.Label();
-            this.txtMatricula = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtMatricula = new System.Windows.Forms.TextBox();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblMatricula = new System.Windows.Forms.Label();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            this.medicoTableAdapter = new ProyectoGrupo9.Proyecto_PAVDataSetTableAdapters.MedicoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.medicoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyecto_PAVDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // medicoBindingSource
+            // 
+            this.medicoBindingSource.DataMember = "Medico";
+            this.medicoBindingSource.DataSource = this.proyecto_PAVDataSet;
+            // 
+            // proyecto_PAVDataSet
+            // 
+            this.proyecto_PAVDataSet.DataSetName = "Proyecto_PAVDataSet";
+            this.proyecto_PAVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // reportViewer5
             // 
+            reportDataSource1.Name = "DatosMedicos";
+            reportDataSource1.Value = this.medicoBindingSource;
+            this.reportViewer5.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer5.LocalReport.ReportEmbeddedResource = "ProyectoGrupo9.ReporteMedicos.rdlc";
             this.reportViewer5.Location = new System.Drawing.Point(0, 126);
             this.reportViewer5.Name = "reportViewer5";
             this.reportViewer5.ServerReport.BearerToken = null;
             this.reportViewer5.Size = new System.Drawing.Size(657, 415);
             this.reportViewer5.TabIndex = 0;
+            this.reportViewer5.Load += new System.EventHandler(this.reportViewer5_Load);
             // 
             // groupBox1
             // 
@@ -61,6 +82,39 @@ namespace ProyectoGrupo9.Negocio
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(97, 60);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(204, 20);
+            this.txtApellido.TabIndex = 4;
+            // 
+            // txtMatricula
+            // 
+            this.txtMatricula.Location = new System.Drawing.Point(97, 26);
+            this.txtMatricula.Name = "txtMatricula";
+            this.txtMatricula.Size = new System.Drawing.Size(204, 20);
+            this.txtMatricula.TabIndex = 3;
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(25, 67);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(44, 13);
+            this.lblApellido.TabIndex = 2;
+            this.lblApellido.Text = "Apellido";
+            // 
+            // lblMatricula
+            // 
+            this.lblMatricula.AutoSize = true;
+            this.lblMatricula.Location = new System.Drawing.Point(25, 33);
+            this.lblMatricula.Name = "lblMatricula";
+            this.lblMatricula.Size = new System.Drawing.Size(50, 13);
+            this.lblMatricula.TabIndex = 1;
+            this.lblMatricula.Text = "Matricula";
             // 
             // btnGenerar
             // 
@@ -72,37 +126,9 @@ namespace ProyectoGrupo9.Negocio
             this.btnGenerar.UseVisualStyleBackColor = true;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
-            // lblMatricula
+            // medicoTableAdapter
             // 
-            this.lblMatricula.AutoSize = true;
-            this.lblMatricula.Location = new System.Drawing.Point(25, 33);
-            this.lblMatricula.Name = "lblMatricula";
-            this.lblMatricula.Size = new System.Drawing.Size(50, 13);
-            this.lblMatricula.TabIndex = 1;
-            this.lblMatricula.Text = "Matricula";
-            // 
-            // lblApellido
-            // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(25, 67);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(44, 13);
-            this.lblApellido.TabIndex = 2;
-            this.lblApellido.Text = "Apellido";
-            // 
-            // txtMatricula
-            // 
-            this.txtMatricula.Location = new System.Drawing.Point(97, 26);
-            this.txtMatricula.Name = "txtMatricula";
-            this.txtMatricula.Size = new System.Drawing.Size(204, 20);
-            this.txtMatricula.TabIndex = 3;
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Location = new System.Drawing.Point(97, 60);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(204, 20);
-            this.txtApellido.TabIndex = 4;
+            this.medicoTableAdapter.ClearBeforeFill = true;
             // 
             // frmReporteMedicos
             // 
@@ -115,6 +141,8 @@ namespace ProyectoGrupo9.Negocio
             this.Name = "frmReporteMedicos";
             this.Text = "frmReporteMedicos";
             this.Load += new System.EventHandler(this.frmReporteMedicos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.medicoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyecto_PAVDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -130,5 +158,8 @@ namespace ProyectoGrupo9.Negocio
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblMatricula;
         private System.Windows.Forms.Button btnGenerar;
+        private Proyecto_PAVDataSet proyecto_PAVDataSet;
+        private System.Windows.Forms.BindingSource medicoBindingSource;
+        private Proyecto_PAVDataSetTableAdapters.MedicoTableAdapter medicoTableAdapter;
     }
 }

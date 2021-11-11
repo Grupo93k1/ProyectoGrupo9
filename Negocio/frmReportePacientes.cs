@@ -16,6 +16,7 @@ namespace ProyectoGrupo9.Negocio
     {
         Paciente oPaciente = new Paciente();
         Ciudad oCiudad = new Ciudad();
+        Obra_Social oObra = new Obra_Social();
         public frmReportePacientes()
         {
             InitializeComponent();
@@ -23,8 +24,11 @@ namespace ProyectoGrupo9.Negocio
 
         private void frmReportePacientes_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'proyecto_PAVDataSet.Pacientes' Puede moverla o quitarla según sea necesario.
+            this.pacientesTableAdapter.Fill(this.proyecto_PAVDataSet.Pacientes);
             CargarCombo(cboCiudad, oCiudad.RecuperarTodos());
-            //this.reportViewer2.RefreshReport();
+            CargarCombo(cboObra, oObra.RecuperarTodos());
+            this.reportViewer2.RefreshReport();
         }
 
         private void reportViewer2_Load(object sender, EventArgs e)
@@ -46,6 +50,23 @@ namespace ProyectoGrupo9.Negocio
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string _nombre, _apellido, _DNI, _obraSocial, _ciudad;
+            _nombre = _apellido = _DNI = _obraSocial = _ciudad = string.Empty;
+
+            if (txtDni.TextLength != -1)
+                _DNI = txtDni.TextLength.ToString();
+            if (txtApellido.TextLength != -1)
+                _apellido = txtApellido.TextLength.ToString();
+            if (txtNombre.TextLength != -1)
+                _nombre = txtNombre.TextLength.ToString();
+            if (cboCiudad.SelectedIndex != -1)
+                _ciudad = cboCiudad.SelectedValue.ToString();
+            if (cboObra.SelectedIndex != -1)
+                _obraSocial = cboObra.SelectedValue.ToString();
+
+            this.pacientesBindingSource.DataSource = oPaciente.RecuperarFiltrados2(_nombre, _apellido, _DNI, _ciudad, _obraSocial);
+
+            
             this.reportViewer2.RefreshReport();
         }
         private void CargarCombo(ComboBox combo, DataTable tabla)
@@ -63,6 +84,11 @@ namespace ProyectoGrupo9.Negocio
             combo.ValueMember = campoValor;
             combo.SelectedIndex = -1;
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -17,5 +17,22 @@ namespace ProyectoGrupo9.Clases
             //BDHelper oDatos = new BDHelper();
             return BDHelper.GetDBHelper().ConsultaSQL(consulta);
         }
+        public DataTable RecuperarFiltrados2(string desde, string hasta, string medico)
+        {
+            string consulta = "SELECT * From Turnos t " +
+                "where t.borrado = 0 ";
+
+            consulta += " AND t.fecha BETWEEN '" + desde + "' AND '" + hasta + "'";
+            if (medico != string.Empty)
+                consulta += " AND t.medico ='" + medico + "'";
+
+
+
+            //return BDHelper2.GetDBHelper().ConsultaSQL(consulta);
+            //BDHelper oDatos = new BDHelper();
+
+            //return BDHelper.obtenerInstancia().consultar(consulta);
+            return Datos.Datos.obtenerInstancia().consultar(consulta);
+        }
     }
 }

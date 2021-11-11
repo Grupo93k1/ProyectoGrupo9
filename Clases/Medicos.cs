@@ -73,5 +73,23 @@ namespace ProyectoGrupo9.Clases
             //BDHelper oDatos = new BDHelper();
             return BDHelper.GetDBHelper().ConsultaSQL(consulta);
         }
+        public DataTable RecuperarFiltrados2(string matricula, string apellido)
+        {
+            string consulta = "SELECT * From Medico m " +
+                "where m.borrado = 0 ";
+
+
+            if (matricula != string.Empty)
+                consulta += " AND (m.matricula=" + matricula;
+            if (apellido != "")
+                consulta += " or m.apellido= '" + apellido + "')";
+
+
+            //return BDHelper2.GetDBHelper().ConsultaSQL(consulta);
+            //BDHelper oDatos = new BDHelper();
+
+            //return BDHelper.obtenerInstancia().consultar(consulta);
+            return Datos.Datos.obtenerInstancia().consultar(consulta);
+        }
     }  
 }
